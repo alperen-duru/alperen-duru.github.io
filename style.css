@@ -1,0 +1,367 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #bf5700; /* UT Austin burnt orange */
+    --primary-hover: #a04800;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6b6b6b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --border-color: #e0e0e0;
+    --link-color: #0066cc;
+    --link-hover: #004999;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Hero / Header Section */
+.hero {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-section {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+}
+
+.photo-placeholder {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.profile-info h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.profile-info .title {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.profile-info .affiliation {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.profile-info .advisors {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--border-color);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: white;
+}
+
+/* Sections */
+.section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+}
+
+.section p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Research Interests List */
+.research-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.research-list li {
+    padding: 12px 16px;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Publications */
+.pub-item {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.pub-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.pub-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px !important;
+}
+
+.pub-authors {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px !important;
+}
+
+.pub-venue {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 8px !important;
+}
+
+.pub-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px !important;
+}
+
+.pub-links {
+    display: flex;
+    gap: 12px;
+}
+
+.pub-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--link-color);
+}
+
+/* Experience */
+.exp-item {
+    margin-bottom: 24px;
+}
+
+.exp-item:last-child {
+    margin-bottom: 0;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.exp-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.exp-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.exp-role {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 8px !important;
+}
+
+.exp-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Education */
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.edu-item:last-child {
+    margin-bottom: 0;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.edu-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.edu-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.edu-degree {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 2px !important;
+}
+
+.edu-details {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-links {
+        justify-content: center;
+    }
+
+    .exp-header,
+    .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .research-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 0 30px;
+    }
+
+    .section {
+        padding: 30px 0;
+    }
+}
